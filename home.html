@@ -1,0 +1,147 @@
+<html>
+<div class="half">
+  <link rel="stylesheet" href="home.css">
+
+  <body>
+    <a href="#" id="responsive"></a>
+    <div class="row">
+      <div class="topnav" id="myTopnav">
+
+        <a href="signup.html">LOGOUT</a>
+        <a href="booked.html">BOOKINGS</a>
+        <a href="registerhouse.html">REGISTER HOUSE</a>
+        <a href="viewcomplaint.html">COMPLAINTS</a>
+        <a href="download.html">DOWNLOAD APP</a>
+
+
+      </div>
+      <div class="container2">
+        <h3>Complaint Form</h3>
+        <fieldset>
+          <input placeholder="Your Name" name="name" type="text" id="name" required />
+        </fieldset>
+
+
+        <fieldset>
+
+          <textarea placeholder="Enter your complaint" rows="4" cols="50" id="complaint123"></textarea>
+
+        </fieldset>
+
+
+        <button class="submit1">File Complaint</button>
+
+      </div>
+
+      <script>
+        function complaint() {
+
+          var db = firebase.firestore();
+          var name = document.getElementById("name").value;
+          var complaint = document.getElementById("complaint123").value;
+          // alert(complaint);
+          var user = firebase.auth().currentUser.phoneNumber;
+          // if (user != null) {
+          //     var email = user.email;  
+          // }
+          // window.alert(user);
+
+
+          db.collection("complaint").doc().set({
+            user: user,
+            // Email:email,
+            name: name,
+            complaint: complaint
+          })
+            .then(function () {
+              window.alert("complaint succesfully registered");
+              window.location.href = "home.html";
+            })
+            .catch(function (error) {
+              window.alert("error");
+            });
+
+        }                    
+      </script>
+
+      <div class="container">
+        <h3>PAKISTANI AIR BNB</h3>
+        <h4>Search for house</h4>
+
+        <div class="dropdown">
+          <fieldset>
+            <label>Select Area: </label>
+            <select id="area">
+              <option value="Gulshan-e-Iqbal">Gulshan-e-Iqbal</option>
+              <option value="Gulistan-e-Johar">Gulistan-e-Johar</option>
+              <option value="NorthNazimabad">NorthNazimabad</option>
+              <option value="FB-Area">FB-Area</option>
+              <option value="Defence">Defence</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="submit2">Search</button>
+          </fieldset>
+
+
+
+        </div>
+        <script>
+          function searcharea() {
+            var area = document.getElementById("area").value;
+            window.location.href = "searcharea.html?" + area + "";
+          }                    
+        </script>
+
+
+
+
+        <fieldset>
+          <input placeholder="Number Of Rooms" type="number" id="rooms" required />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="submit2" >Search</button>
+        </fieldset>
+
+        <script>
+          function searchrooms() {
+            var rooms = document.getElementById("rooms").value;
+            window.location.href = "searchrooms.html?" + rooms + "";
+          }                    
+        </script>
+
+        <fieldset>
+          <input placeholder="Rent per day" type="number" id="rent" required />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="submit2" >Search</button>
+        </fieldset>
+
+        <script>
+          function searchrent() {
+            var rent = document.getElementById("rent").value;
+            window.location.href = "searchrent.html?" + rent + "";
+          }                    
+        </script>
+
+      </div>
+    </div>
+
+</div>
+
+<div class="secondhalf">
+
+
+
+  
+
+  <div class="list" id="list">
+    <div class="list-item">
+      <h1> House list </h1>
+      <hr />
+    </div>
+  </div>
+ 
+  <div class='list-item'><p>Name: Ersal</p><p>Phone: 090078601</p><p>Address: gulistan e johar, blovk 15</p><a class='button1' href='viewdetailshouse.html?" + docid + "'>View Details</a><hr /></div>
+</div>
+
+</body>
+
+</html>

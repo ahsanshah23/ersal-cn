@@ -1,0 +1,237 @@
+body {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    height: 150%;
+   
+    background: #4CAF50;
+  
+    background-image: url(http://cdn.home-designing.com/wp-content/uploads/2017/01/tropical-artwork-grey-exposed-brick-1024x576.jpg) ;
+      background-position: center center;
+      background-repeat:  no-repeat;
+      background-attachment: fixed;
+      background-size:  cover;
+    background-color: #999;
+    
+  }
+
+  @media (min-width: 400px) and (min-height:600px){
+    .container{
+      
+      margin-left:35%;
+      margin-top:50%;
+        width:550px;
+        height: 450px;
+    }
+}
+
+@media (min-width: 400px) and (min-height:600px){
+    body{
+        width:350px;
+        height: 300px;
+    }
+}
+  
+  img{
+      width: 20%;
+      height: 10%;
+  }
+  
+ .a{
+     margin-top: 20%;
+ }
+ 
+  
+  .submit1{
+    cursor: pointer;
+    width: 10%;
+    border: none;
+    background: black;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    margin-left: 71%;
+    font-size: 15px;
+    margin-top: 50%;
+    position: center;
+  }
+  .submit1:hover{
+    background: #43A047;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .submit1:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+ 
+  .container {
+    height: 33%;
+    width: 25%;
+    /* position: relative; */
+    margin-right:50%;
+    margin-top:30%;
+    padding:50px;
+    background: white;
+    float:right;
+    
+    
+  }
+  
+  .image{
+    margin-top:40px;
+    width:50%;
+    float:right;
+    
+  }
+  
+  
+  h3 {
+    display: block;
+    font-size: 30px;
+    font-weight: 300;
+    color: black;
+  }
+  
+  h4 {
+   
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: black;
+  }
+  
+  fieldset {
+    border: medium none !important;
+    margin: 0 0 10px;
+    min-width: 100%;
+    padding: 2%;
+    width: 100%;
+    margin-top: 8%;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+  }
+
+  .submit2{
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: gray;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+  }
+  .submit2:hover{
+    background: black;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .submit2:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  
+  
+  
+  
+  
+  ::-webkit-input-placeholder {
+    color: #888;
+  }
+  
+  :-moz-placeholder {
+    color: #888;
+  }
+  
+  ::-moz-placeholder {
+    color: #888;
+  }
+  
+  :-ms-input-placeholder {
+    color: #888;
+  }
+    
+              .topnav {
+              background-color: transparent;
+              overflow: hidden;
+              }
+  
+              /* Style the links inside the navigation bar */
+              .topnav a {
+              float:RIGHT;
+              display: block;
+              color: #f2f2f2;
+              text-align: center;
+              padding: 30px 16px;
+              text-decoration: none;
+        font-size: 25px;
+        margin-right: 10%;
+        border: #191919;
+        border-radius: 10%;
+        font: bold;
+              }
+  
+              /* Change the color of links on hover */
+              .topnav a:hover {
+              background-color: #ddd;
+              color: black;
+              }
+  
+              /* Add an active class to highlight the current page */
+              .active {
+              background-color: #4CAF50;
+              color: white;
+              }
+              
+              .align-right {
+              text-align: right;
+              }
+  
+              /* Hide the link that should open and close the topnav on small screens */
+              .topnav .icon {
+              display: none;
+              }
+          
+          body {
+          
+          background-color:#191919;
+  
+          
+        }
+          
+      
+  
+        img {
+          margin-top: 20%;
+        }
+  
+        .img1 {
+          display: block;
+          margin-left: 500px;
+          margin-top: 50px;
+        }
+        
+      
+        
+        .row::after {
+    content: "a";
+    clear: both;
+    display: table;
+  }
+        
+  

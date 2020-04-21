@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Login</title>
+  <!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="row">
+    <div class="topnav" id="myTopnav">
+      <a href="signup.html">LOGOUT</a>
+      <a href="home.html">HOME</a>
+    </div>
+    <div class="container">
+
+      <h3>PAKISTANI AIR BNB</h3>
+      <h3>Register House</h3>
+      <h4>Fill the form to register your house </h4>
+
+      <fieldset>
+        <input placeholder="Your Name" name="name" type="text" id="NamePersonal" required />
+      </fieldset>
+
+      <fieldset>
+
+        <input placeholder="Phone Number" type="number" id="NumberPersonal" required />
+      </fieldset>
+
+      <fieldset>
+        <input placeholder="CNIC" type="number" id="national" required />
+      </fieldset>
+
+      <div class="dropdown">
+        <fieldset>
+          <label>Select Area: </label>
+          <select id="area">
+            <option value="Gulshan-e-Iqbal">Gulshan-e-Iqbal</option>
+            <option value="Gulistan-e-Johar">Gulistan-e-Johar</option>
+            <option value="NorthNazimabad">NorthNazimabad</option>
+            <option value="FB-Area">FB-Area</option>
+            <option value="Defence">Defence</option>
+          </select>
+
+
+          <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select Block: </label>
+          <select id="block">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </fieldset>
+
+      </div>
+
+      <fieldset>
+        <input placeholder="Complete Address" type="text" id="address" required />
+      </fieldset>
+
+      <fieldset>
+        <input placeholder="Enter total number of rooms" type="number" id="rooms" required />
+      </fieldset>
+
+      <fieldset>
+        <input placeholder="Rent per day" type="number" id="rent" required />
+      </fieldset>
+
+      <fieldset>
+        <textarea placeholder="Describe your house" rows="4" cols="50" id="description"></textarea>
+
+      </fieldset>
+
+      <fieldset>
+        <h4>Select image, click upload and wait for it to upload before submiting the form</h4>
+        <label>Upload Image:<input type="file" value="fileupload" id="file"></label>
+        <button class="submit2" >Upload</button>
+      </fieldset>
+
+      <!-- <button class="submit1" onclick="addhouse()">File Complaint</button> -->
+      <button class="submit1" >Register House</button>
+
+    </div>
+
+
+    <script src="registerhouse.js"></script>
+
+</body>
+<link rel="stylesheet" href="addhouse1.css">
+
+</html>

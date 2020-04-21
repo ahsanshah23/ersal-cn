@@ -1,0 +1,137 @@
+<html>
+    <div class="half"> 
+        <link rel="stylesheet" href="search.css">
+<body background="assets/img/background.png">
+  
+ <div class="row">
+<div class="topnav" id="myTopnav">
+			
+    <a href="index.html">LOGOUT</a>
+    <a href="registerhouse.html">REGISTER HOUSE</a>
+    <!-- <a href="addhouse.html">REGISTER HOUSE</a> -->
+    
+		</div>
+   
+    <div class="container">  
+    <h3>PAKISTANI AIR BNB</h3>
+    <h4>Search for house</h4>
+    <h4>Fill the form to register a complaint </h4>
+    
+    
+    <div class="dropdown">
+        <fieldset>
+          <label>Select Area:    </label> 
+         <select id="area">
+                   <option value="Gulshan-e-Iqbal">Gulshan-e-Iqbal</option>
+                   <option value="Gulistan-e-Johar">Gulistan-e-Johar</option>
+                   <option value="NorthNazimabad">NorthNazimabad</option>
+                   <option value="FB-Area">FB-Area</option>
+                   <option value="Defence">Defence</option>
+                 </select>
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <button class="submit2" onclick="searcharea()" >Search</button>
+                </fieldset>
+          
+    </div>
+    <script>
+        function searcharea()
+        {
+          var area = document.getElementById("area").value;
+          window.location.href = "searcharea.html?"+area+"";
+        }                    
+    </script>
+    
+    
+      
+
+    <fieldset>
+      <input placeholder="Number Of Rooms" type="number"  id="rooms" required/>  
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="submit2" onclick="searchrooms()" >Search</button> 
+ </fieldset>
+    
+ <script>
+    function searchrooms()
+    {
+      var rooms = document.getElementById("rooms").value;
+      window.location.href = "searcharea.html?"+rooms+"";
+    }                    
+</script>
+
+    <fieldset>
+        <input placeholder="Rent per day" type="number"  id="rent" required/>  
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="submit2" onclick="searchrent()" >Search</button> 
+   </fieldset>
+  
+   <script>
+      function searchrent()
+      {
+        var rent = document.getElementById("rent").value;
+        window.location.href = "searcharea.html?"+rent+"";
+      }                    
+  </script>
+      <!-- <input class="submit1" onclick="window.location.href = 'userlogin.html'" type="button" value="Complaint" /> -->
+
+
+</div>
+</div>
+
+</div>
+
+<div class="secondhalf">
+     
+        
+        
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyBRgOcSI6TyHZjQ0vs-OOfr2Tf8QKLfaiM",
+            authDomain: "cn-project-956bb.firebaseapp.com",
+            databaseURL: "https://cn-project-956bb.firebaseio.com",
+            projectId: "cn-project-956bb",
+            storageBucket: "cn-project-956bb.appspot.com",
+            messagingSenderId: "392988811100"
+          };
+          firebase.initializeApp(config);
+        </script>  
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+    
+    <div class="list" id="list">
+        <div class="list-item">
+          <h1> House list </h1><hr />
+        </div>
+    </div>
+    <script >
+        var list = document.querySelector("#list");
+
+        var db = firebase.firestore();
+                var queryString = decodeURIComponent(window.location.search);
+                queryString = queryString.substring(1);
+                var queries = queryString.split("?");
+                var area = queries[0];
+                // alert(area);
+                var collectionRef = db.collection('houses');
+                var query = collectionRef.where('area','==',area).get()
+                .then(snapshot => {
+                    snapshot.forEach( function(doc) {
+                        
+                  
+                        var docid = doc.id;
+                    
+                        list.innerHTML += "<div class='list-item'><p>Email: "+  doc.data().Email + "</p><p>Area: "+  doc.data().area + "</p><p>Address: "+  doc.data().address + "</p><a class='button1' href='viewdetailshouse.html?"+docid+"'>View Details</a><hr /></div>"
+                    });
+                })
+                .catch(err => {
+                    console.log('Error getting documents', err);
+                });
+
+    </script>
+</div>
+
+</body>
+</html>

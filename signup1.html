@@ -1,0 +1,53 @@
+<html>
+
+        <link rel="stylesheet" href="signup.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyBRgOcSI6TyHZjQ0vs-OOfr2Tf8QKLfaiM",
+            authDomain: "cn-project-956bb.firebaseapp.com",
+            databaseURL: "https://cn-project-956bb.firebaseio.com",
+            projectId: "cn-project-956bb",
+            storageBucket: "cn-project-956bb.appspot.com",
+            messagingSenderId: "392988811100"
+          };
+          firebase.initializeApp(config);
+        </script>  
+    
+
+<body background="assets/img/background.png"> 
+
+
+  <div class="row">
+    <div class="topnav" id="myTopnav">
+          
+          
+      <a href="index.html">SIGN IN</a>
+
+        </div>
+        
+        <div class="container">   
+      
+        <h3>Registration Form</h3>
+        <h4>Fill the form to register</h4>
+        
+        <fieldset>
+          <input type="text" id="phone" value="+923082364937">
+        </fieldset> 
+            <button class="submit1" onclick="register()" >Register</button>
+         
+        </div>
+        <script>function register()
+          {
+              var phone = document.getElementById("phone").value;
+              window.alert(phone);
+                window.location.href = "extra.html?"+phone+"";
+             
+          }</script>
+
+    </div>
+
+</body>
+</html>
